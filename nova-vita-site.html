@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NOVA VITA — Ensemble, faisons reculer la violence</title>
+<meta name="description" content="NOVA VITA sensibilise, informe et encourage chacun à devenir acteur du changement face aux violences.">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* ===== COULEURS (modifiez ici) ===== */
+:root {
+  --mauve: #000000;
+  --mauve-s: #BDBDBD;
+  --mauve-bg: #F3F3F3;
+  /* "mauve" = noir (noms gardés pour ne pas casser le HTML) */
+  --green: #1E7B4F;
+  --sage: #9FD3B4;
+  --green-bg: #EDF7F1;
+  --white: #FFFFFF;
+  --text: #111111;
+  --r: 18px;
+  --sh: 0 10px 30px rgba(41, 39, 43, .08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  font: 17px/1.65 "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--white);
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--mauve);
+  line-height: 1.15;
+  margin: 0 0 .6em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--green);
+}
+
+:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+
+.skip:focus {
+  left: 10px;
+  top: 10px;
+  background: #fff;
+  padding: 8px;
+  z-index: 99;
+}
+
+.wrap {
+  max-width: 1140px;
+  margin: auto;
+  padding: 0 22px;
+}
+
+.wrap--narrow {
+  max-width: 760px;
+}
+
+/* Navigation */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.nav__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo__img {
+  height: 38px;
+  width: auto;
+}
+
+.logo__mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--mauve), var(--green));
+  color: #fff;
+}
+
+.logo__txt {
+  font: 700 1.15rem Georgia, serif;
+  letter-spacing: .14em;
+  color: var(--mauve);
+  margin: 0;
+}
+
+.menu {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: .88rem;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a.active {
+  border-color: var(--sage);
+}
+
+.menu a.btn {
+  color: #fff;
+  border: 0;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--mauve);
+  margin: 5px 0;
+  transition: .3s;
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform .25s, box-shadow .25s, background .25s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh);
+}
+
+.btn--sm {
+  padding: 9px 18px;
+}
+
+.btn--green {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn--green:hover {
+  background: #165c3b;
+}
+
+.btn--mauve {
+  background: var(--mauve);
+  color: #fff;
+}
+
+.btn--ghost {
+  border-color: var(--mauve);
+  color: var(--mauve);
+  background: transparent;
+}
+
+/* Hero */
+.hero {
+  background: radial-gradient(900px 500px at 85% 20%, var(--mauve-bg), transparent), linear-gradient(180deg, var(--green-bg), var(--white));
+}
+
+.hero__in {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 50px;
+  align-items: center;
+  min-height: calc(100vh - 68px);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.hero em {
+  color: var(--green);
+  font-style: italic;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .8rem;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.lead {
+  font-size: 1.2rem;
+  max-width: 34em;
+}
+
+.cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero__fig {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4/5;
+  border-radius: 200px 200px var(--r) var(--r);
+  overflow: hidden;
+  box-shadow: var(--sh);
+  background: linear-gradient(160deg, var(--mauve-s), var(--sage));
+}
+
+.hero__fig img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.hero__fallback span {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .35);
+}
+
+.hero__fallback span:nth-child(1) {
+  width: 55%;
+  aspect-ratio: 1;
+  left: -10%;
+  top: 15%;
+}
+
+.hero__fallback span:nth-child(2) {
+  width: 45%;
+  aspect-ratio: 1;
+  right: -8%;
+  top: 40%;
+  background: rgba(30, 123, 79, .25);
+}
+
+.hero__fallback span:nth-child(3) {
+  width: 30%;
+  aspect-ratio: 1;
+  left: 30%;
+  bottom: 8%;
+  background: rgba(0, 0, 0, .25);
+}
+
+/* Valeurs */
+.values {
+  background: var(--mauve);
+  color: #fff;
+}
+
+.values__in {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 22px;
+  margin: auto;
+}
+
+.values li {
+  font: 600 1.1rem Georgia, serif;
+  letter-spacing: .06em;
+}
+
+.values span {
+  margin-right: 8px;
+}
+
+/* Sections */
+.sec {
+  padding: 90px 0;
+}
+
+.sec--mauve {
+  background: var(--mauve-bg);
+}
+
+.sec--green {
+  background: var(--green-bg);
+}
+
+.intro {
+  max-width: 44em;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  gap: 22px;
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--r);
+  padding: 28px;
+  box-shadow: var(--sh);
+  border-top: 4px solid var(--sage);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.grid .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, .16);
+}
+
+.ico {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ex {
+  font-size: .92rem;
+  color: var(--mauve);
+  border-left: 3px solid var(--mauve-s);
+  padding-left: 10px;
+}
+
+.odd {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.badge {
+  flex: none;
+  position: relative;
+  width: 84px;
+  height: 84px;
+  border-radius: 12px;
+  background: var(--green);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font: 700 2rem Georgia, serif;
+  overflow: hidden;
+}
+
+.badge img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+.chips {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.chips li {
+  background: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--sage);
+  font-weight: 600;
+  color: var(--green);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery figure {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--mauve-s), var(--sage));
+  display: grid;
+  place-items: end start;
+}
+
+.gallery img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery figcaption {
+  position: relative;
+  color: #fff;
+  font-size: .8rem;
+  padding: 10px 14px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+}
+
+.todo {
+  background: #fff3c9;
+  padding: 1px 8px;
+  border-radius: 6px;
+  border: 1px dashed #b38b00;
+  font-size: .92em;
+}
+
+.soon {
+  color: var(--mauve);
+  font-weight: 600;
+}
+
+.help {
+  padding-left: 20px;
+}
+
+.help li {
+  margin: 10px 0;
+}
+
+/* Quiz */
+.quiz h3 {
+  font-size: 1.3rem;
+}
+
+.opts {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.opt {
+  text-align: left;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px solid var(--mauve-s);
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.opt:hover:not(:disabled) {
+  background: var(--mauve-bg);
+}
+
+.opt.good {
+  border-color: var(--green);
+  background: var(--green-bg);
+}
+
+.opt.bad {
+  border-color: #a03a3a;
+  background: #fbeeee;
+}
+
+.fb {
+  min-height: 3em;
+  font-weight: 500;
+}
+
+.meta {
+  color: var(--mauve);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/* Formulaire */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+input:not([type=checkbox]),
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #cfcfcf;
+  border-radius: 10px;
+  font: inherit;
+  margin-top: 6px;
+  background: #fff;
+}
+
+input[aria-invalid=true],
+textarea[aria-invalid=true] {
+  border-color: #a03a3a;
+}
+
+.check {
+  display: flex !important;
+  gap: 10px;
+  font-weight: 400 !important;
+}
+
+.err {
+  color: #9a2f2f;
+  font-size: .9rem;
+  margin: 4px 0 0;
+  min-height: 0;
+}
+
+.err:not(:empty)::before {
+  content: "⚠ ";
+}
+
+.ok {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.note {
+  font-size: .92rem;
+}
+
+form .btn {
+  margin-top: 20px;
+}
+
+/* Footer */
+.foot {
+  background: #000000;
+  color: #eeeeee;
+  padding-top: 56px;
+}
+
+.foot__in {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+}
+
+.foot a {
+  display: block;
+  color: #9fd3b4;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.foot .logo__txt {
+  color: #fff;
+}
+
+.foot .todo {
+  color: #111111;
+}
+
+.copy {
+  text-align: center;
+  border-top: 1px solid #2e2e2e;
+  margin: 40px 0 0;
+  padding: 18px;
+  font-size: .85rem;
+}
+
+/* Animations */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s, transform .7s;
+}
+
+.js .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .burger {
+    display: block;
+  }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--white);
+    padding: 20px 22px;
+    gap: 14px;
+    border-bottom: 1px solid #e3e3e3;
+  }
+  .menu.open {
+    display: flex;
+  }
+}
+
+@media (max-width: 980px) {
+  .grid--4,
+  .grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero__in {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero__fig {
+    max-width: 420px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid--4,
+  .grid--3,
+  .grid--2,
+  .gallery,
+  .foot__in {
+    grid-template-columns: 1fr;
+  }
+  .sec {
+    padding: 60px 0;
+  }
+  .odd {
+    flex-direction: column;
+  }
+}
+
+/* ===== PAGE DÉFI 7 JOURS ===== */
+.page-hero {
+  background: var(--mauve);
+  color: #fff;
+  padding: 90px 0 70px;
+}
+
+.page-hero h1 {
+  color: #fff;
+  max-width: 14em;
+}
+
+.page-hero .lead {
+  color: #e6e6e6;
+}
+
+.page-hero .btn--ghost {
+  border-color: #fff;
+  color: #fff;
+}
+
+.page-hero em {
+  color: var(--sage);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--sage);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.progress {
+  position: sticky;
+  top: 68px;
+  z-index: 20;
+  background: #fff;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 14px 0;
+}
+
+.progress__in {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.progress__bar {
+  flex: 1;
+  height: 12px;
+  background: #e9e9e9;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress__bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--green);
+  transition: width .4s;
+}
+
+.progress__txt {
+  font-weight: 700;
+  color: var(--mauve);
+  white-space: nowrap;
+}
+
+.days {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.day {
+  display: grid;
+  grid-template-columns: 76px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: var(--r);
+  padding: 20px 24px;
+  transition: background .25s, border-color .25s;
+}
+
+.day__n {
+  font: 700 2.4rem/1 Georgia, serif;
+  color: var(--mauve);
+}
+
+.day__n small {
+  display: block;
+  font: 600 .7rem "Segoe UI", sans-serif;
+  letter-spacing: .06em;
+  color: #555;
+}
+
+.day h3 {
+  margin: 0 0 .25em;
+  color: var(--mauve);
+}
+
+.day p {
+  margin: 0;
+}
+
+.day button {
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 2px solid var(--green);
+  background: #fff;
+  color: var(--green);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: .95rem;
+  cursor: pointer;
+  min-width: 132px;
+}
+
+.day button:hover {
+  background: var(--green-bg);
+}
+
+.day.done {
+  background: var(--green-bg);
+  border-color: var(--green);
+}
+
+.day.done button {
+  background: var(--green);
+  color: #fff;
+}
+
+.day.done .day__n {
+  color: var(--green);
+}
+
+.finish {
+  display: none;
+  margin-top: 36px;
+  background: #000;
+  color: #fff;
+  border-radius: var(--r);
+  padding: 34px;
+  text-align: center;
+}
+
+.finish.show {
+  display: block;
+}
+
+.finish h2 {
+  color: #fff;
+  margin-bottom: .3em;
+}
+
+.finish p {
+  max-width: 36em;
+  margin: 0 auto 18px;
+}
+
+.reset {
+  margin-top: 26px;
+  background: none;
+  border: 0;
+  color: #555;
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+}
+
+@media (max-width: 640px) {
+  .day {
+    grid-template-columns: 56px 1fr;
+  }
+  .day button {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .day__n {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== PAGES SECONDAIRES (À propos, Événements, FAQ) ===== */
+.card--dark {
+  background: #000;
+  color: #fff;
+  border-top-color: var(--green);
+}
+
+.card--dark h3 {
+  color: #fff;
+}
+
+.card--dark a:not(.btn) {
+  color: var(--sage);
+}
+
+.btn--light {
+  border-color: #fff;
+  color: #fff;
+}
+
+.cta-band {
+  text-align: center;
+}
+
+.cta-band .intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tick,
+.cross {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tick li,
+.cross li {
+  padding: 8px 0 8px 30px;
+  position: relative;
+  border-bottom: 1px solid rgba(128, 128, 128, .25);
+}
+
+.tick li:last-child,
+.cross li:last-child {
+  border-bottom: 0;
+}
+
+.tick li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.cross li::before {
+  content: "✘";
+  position: absolute;
+  left: 0;
+  color: var(--sage);
+  font-weight: 700;
+}
+
+.team {
+  text-align: center;
+}
+
+.avatar {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: #fff;
+  font: 700 2rem Georgia, serif;
+}
+
+.events {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 22px;
+  border-left: 3px solid var(--green);
+  display: grid;
+  gap: 26px;
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  position: relative;
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--green);
+}
+
+.event__date {
+  font: 700 1.05rem Georgia, serif;
+  color: var(--green);
+}
+
+.event h3 {
+  margin-bottom: .3em;
+}
+
+.event p {
+  margin: 0 0 .4em;
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.faq {
+  display: grid;
+  gap: 12px;
+}
+
+.faq details {
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 14px;
+  padding: 0 22px;
+}
+
+.faq summary {
+  cursor: pointer;
+  padding: 18px 0;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--green);
+}
+
+.faq details[open] {
+  border-color: var(--green);
+  background: var(--green-bg);
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+.faq details p {
+  margin: 0 0 18px;
+}
+
+@media (max-width: 640px) {
+  .event {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* Galerie : voile sombre derrière les légendes */
+.gallery figure::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 45%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .65));
+}
+
+.gallery figcaption {
+  z-index: 2;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.foot a[href^="mailto"] {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* ===== VERSION EN LIGNE (page unique) ===== */
+:root {
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: calc(80px + env(safe-area-inset-top, 0px)); }
+.nav { top: env(safe-area-inset-top, 0px); }
+.progress { top: calc(68px + env(safe-area-inset-top, 0px)); }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: rgba(255, 255, 255, .92);
+  z-index: 60;
+}
+.js .view { display: none; }
+.js .view.on { display: block; }
+main:focus { outline: none; }
+
+</style>
+</head>
+<body>
+<header class="nav" id="haut">
+      <div class="wrap nav__in">
+        <!-- LOGO : data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkxvZ28gTk9WQSBWSVRBIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0OCIgZmlsbD0iIzExMTExMSIvPgo8cGF0aCBkPSJNNTAgNzggVjQ2IiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CjxwYXRoIGQ9Ik01MCA1MiBDNTAgMzYgMzggMjggMjQgMzAgQzI0IDQ2IDM0IDU0IDUwIDUyWiIgZmlsbD0iIzFFN0I0RiIvPgo8cGF0aCBkPSJNNTAgNDQgQzUwIDI4IDYyIDIwIDc3IDIyIEM3NyAzOCA2NiA0NiA1MCA0NFoiIGZpbGw9IiM5RkQzQjQiLz4KPHBhdGggZD0iTTM2IDgwIEg2NCIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg== (remplaçable par votre logo PNG ou SVG) -->
+        <a href="#accueil" class="logo" aria-label="NOVA VITA, accueil">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkxvZ28gTk9WQSBWSVRBIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0OCIgZmlsbD0iIzExMTExMSIvPgo8cGF0aCBkPSJNNTAgNzggVjQ2IiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CjxwYXRoIGQ9Ik01MCA1MiBDNTAgMzYgMzggMjggMjQgMzAgQzI0IDQ2IDM0IDU0IDUwIDUyWiIgZmlsbD0iIzFFN0I0RiIvPgo8cGF0aCBkPSJNNTAgNDQgQzUwIDI4IDYyIDIwIDc3IDIyIEM3NyAzOCA2NiA0NiA1MCA0NFoiIGZpbGw9IiM5RkQzQjQiLz4KPHBhdGggZD0iTTM2IDgwIEg2NCIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==" alt="" class="logo__img" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo__mark',textContent:'✦',ariaHidden:'true'}))">
+          <span class="logo__txt">NOVA VITA</span>
+        </a>
+        <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+        <nav id="menu" class="menu" aria-label="Navigation principale">
+          <a href="#accueil">Accueil</a>
+          <a href="#mission">Mission</a>
+          <a href="#comprendre">Comprendre</a>
+          <a href="#actions">Actions</a>
+          <a href="#defi">Défi 7 jours</a>
+          <a href="#evenements">Événements</a>
+          <a href="#apropos">À propos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#aide" class="btn btn--green btn--sm">Besoin d’aide ?</a>
+        </nav>
+      </div>
+    </header>
+<main id="contenu" tabindex="-1">
+<div class="view" id="view-home" data-view="home">
+
+
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="accueil">
+        <div class="wrap hero__in">
+          <div class="hero__text">
+            <p class="eyebrow">Projet de sensibilisation · ODD 16 et ODD 5</p>
+            <h1>Ensemble, faisons <em>reculer</em> la violence.</h1>
+            <p class="lead">Chaque personne mérite de vivre dans un environnement sûr, digne et respectueux. NOVA VITA sensibilise, informe et encourage chacun à devenir acteur du changement.</p>
+            <div class="cta">
+              <a href="#mission" class="btn btn--green">Découvrir notre mission</a>
+              <a href="#comprendre" class="btn btn--ghost">Comprendre les violences</a>
+            </div>
+          </div>
+          <!-- IMAGE HÉROS : data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJEZXMgcGVyc29ubmVzIGRlIHRvdXMgw6JnZXMgc2Ugc291dGVuYW50IGxlcyB1bmVzIGxlcyBhdXRyZXMiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM5RkQzQjQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNFREY3RjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgo8Y2lyY2xlIGN4PSI1NjAiIGN5PSIyMzAiIHI9IjE1MCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iLjU1Ii8+CjxjaXJjbGUgY3g9IjU2MCIgY3k9IjIzMCIgcj0iMjE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjYiIHN0cm9rZS1kYXNoYXJyYXk9IjQgMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSI0MjAiIHI9IjcwIiBmaWxsPSIjMUU3QjRGIiBvcGFjaXR5PSIuMTgiLz4KPGNpcmNsZSBjeD0iMTUwIiBjeT0iNDMyIiByPSI1MiIgZmlsbD0iIzExMTExMSIvPjxyZWN0IHg9IjYyIiB5PSI0ODkiIHdpZHRoPSIxNzciIGhlaWdodD0iNTIwIiByeD0iODgiIGZpbGw9IiMxMTExMTEiLz48Y2lyY2xlIGN4PSIyODUiIGN5PSIzNTEiIHI9IjYxIiBmaWxsPSIjMUU3QjRGIi8+PHJlY3QgeD0iMTgxIiB5PSI0MTciIHdpZHRoPSIyMDciIGhlaWdodD0iNjEwIiByeD0iMTA0IiBmaWxsPSIjMUU3QjRGIi8+PGNpcmNsZSBjeD0iNDI1IiBjeT0iNDc3IiByPSI0NyIgZmlsbD0iIzlGRDNCNCIvPjxyZWN0IHg9IjM0NSIgeT0iNTI5IiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjQ3MCIgcng9IjgwIiBmaWxsPSIjOUZEM0I0Ii8+PGNpcmNsZSBjeD0iNTUwIiBjeT0iMzc4IiByPSI1OCIgZmlsbD0iIzExMTExMSIvPjxyZWN0IHg9IjQ1MSIgeT0iNDQxIiB3aWR0aD0iMTk3IiBoZWlnaHQ9IjU4MCIgcng9Ijk5IiBmaWxsPSIjMTExMTExIi8+PGNpcmNsZSBjeD0iNjY1IiBjeT0iNTc2IiByPSIzNiIgZmlsbD0iIzFFN0I0RiIvPjxyZWN0IHg9IjYwNCIgeT0iNjE3IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjM2MCIgcng9IjYxIiBmaWxsPSIjMUU3QjRGIi8+PGxpbmUgeDE9IjE4MiIgeTE9IjU0NiIgeDI9IjI0OCIgeTI9IjQ4MyIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjMxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9IjEiLz48bGluZSB4MT0iMzIyIiB5MT0iNDgzIiB4Mj0iMzk2IiB5Mj0iNTgwIiBzdHJva2U9IiMxRTdCNEYiIHN0cm9rZS13aWR0aD0iMzciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMSIvPjxsaW5lIHgxPSI0NTQiIHkxPSI1ODAiIHgyPSI1MTUiIHkyPSI1MDQiIHN0cm9rZT0iIzlGRDNCNCIgc3Ryb2tlLXdpZHRoPSIyOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIxIi8+PGxpbmUgeDE9IjU4NSIgeTE9IjUwNCIgeDI9IjY0MyIgeTI9IjY1NiIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjM1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9IjEiLz48cmVjdCB5PSI5MDAiIHdpZHRoPSI4MDAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMTExMTExIi8+PHBhdGggZD0iTTAgOTAwIFEyMDAgODcwIDQwMCA5MDAgVDgwMCA5MDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFN0I0RiIgc3Ryb2tlLXdpZHRoPSI4Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAwIDk1MCkiPjxwYXRoIGQ9Ik0wIDMwIFYtMTIiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMCAwIEMwIC0xOCAtMTQgLTI2IC0zMCAtMjIgQy0zMCAtNCAtMTggNCAwIDBaIiBmaWxsPSIjOUZEM0I0Ii8+PHBhdGggZD0iTTAgLTggQzAgLTI2IDE0IC0zNCAzMCAtMzAgQzMwIC0xMiAxOCAtNCAwIC04WiIgZmlsbD0iIzFFN0I0RiIvPjwvZz48L3N2Zz4= (remplaçable par une photo, format conseillé 1200×1500) -->
+          <figure class="hero__fig">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgMTAwMCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJEZXMgcGVyc29ubmVzIGRlIHRvdXMgw6JnZXMgc2Ugc291dGVuYW50IGxlcyB1bmVzIGxlcyBhdXRyZXMiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM5RkQzQjQiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNFREY3RjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgo8Y2lyY2xlIGN4PSI1NjAiIGN5PSIyMzAiIHI9IjE1MCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iLjU1Ii8+CjxjaXJjbGUgY3g9IjU2MCIgY3k9IjIzMCIgcj0iMjE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjYiIHN0cm9rZS1kYXNoYXJyYXk9IjQgMTQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIxMTAiIGN5PSI0MjAiIHI9IjcwIiBmaWxsPSIjMUU3QjRGIiBvcGFjaXR5PSIuMTgiLz4KPGNpcmNsZSBjeD0iMTUwIiBjeT0iNDMyIiByPSI1MiIgZmlsbD0iIzExMTExMSIvPjxyZWN0IHg9IjYyIiB5PSI0ODkiIHdpZHRoPSIxNzciIGhlaWdodD0iNTIwIiByeD0iODgiIGZpbGw9IiMxMTExMTEiLz48Y2lyY2xlIGN4PSIyODUiIGN5PSIzNTEiIHI9IjYxIiBmaWxsPSIjMUU3QjRGIi8+PHJlY3QgeD0iMTgxIiB5PSI0MTciIHdpZHRoPSIyMDciIGhlaWdodD0iNjEwIiByeD0iMTA0IiBmaWxsPSIjMUU3QjRGIi8+PGNpcmNsZSBjeD0iNDI1IiBjeT0iNDc3IiByPSI0NyIgZmlsbD0iIzlGRDNCNCIvPjxyZWN0IHg9IjM0NSIgeT0iNTI5IiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjQ3MCIgcng9IjgwIiBmaWxsPSIjOUZEM0I0Ii8+PGNpcmNsZSBjeD0iNTUwIiBjeT0iMzc4IiByPSI1OCIgZmlsbD0iIzExMTExMSIvPjxyZWN0IHg9IjQ1MSIgeT0iNDQxIiB3aWR0aD0iMTk3IiBoZWlnaHQ9IjU4MCIgcng9Ijk5IiBmaWxsPSIjMTExMTExIi8+PGNpcmNsZSBjeD0iNjY1IiBjeT0iNTc2IiByPSIzNiIgZmlsbD0iIzFFN0I0RiIvPjxyZWN0IHg9IjYwNCIgeT0iNjE3IiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjM2MCIgcng9IjYxIiBmaWxsPSIjMUU3QjRGIi8+PGxpbmUgeDE9IjE4MiIgeTE9IjU0NiIgeDI9IjI0OCIgeTI9IjQ4MyIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjMxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9IjEiLz48bGluZSB4MT0iMzIyIiB5MT0iNDgzIiB4Mj0iMzk2IiB5Mj0iNTgwIiBzdHJva2U9IiMxRTdCNEYiIHN0cm9rZS13aWR0aD0iMzciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMSIvPjxsaW5lIHgxPSI0NTQiIHkxPSI1ODAiIHgyPSI1MTUiIHkyPSI1MDQiIHN0cm9rZT0iIzlGRDNCNCIgc3Ryb2tlLXdpZHRoPSIyOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIxIi8+PGxpbmUgeDE9IjU4NSIgeTE9IjUwNCIgeDI9IjY0MyIgeTI9IjY1NiIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjM1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9IjEiLz48cmVjdCB5PSI5MDAiIHdpZHRoPSI4MDAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMTExMTExIi8+PHBhdGggZD0iTTAgOTAwIFEyMDAgODcwIDQwMCA5MDAgVDgwMCA5MDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFFN0I0RiIgc3Ryb2tlLXdpZHRoPSI4Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAwIDk1MCkiPjxwYXRoIGQ9Ik0wIDMwIFYtMTIiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMCAwIEMwIC0xOCAtMTQgLTI2IC0zMCAtMjIgQy0zMCAtNCAtMTggNCAwIDBaIiBmaWxsPSIjOUZEM0I0Ii8+PHBhdGggZD0iTTAgLTggQzAgLTI2IDE0IC0zNCAzMCAtMzAgQzMwIC0xMiAxOCAtNCAwIC04WiIgZmlsbD0iIzFFN0I0RiIvPjwvZz48L3N2Zz4=" alt="Des personnes de tous âges se soutenant les unes les autres" onerror="this.remove()">
+            <div class="hero__fallback" aria-hidden="true"><span></span><span></span><span></span></div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ===== VALEURS ===== -->
+      <section class="values" aria-label="Nos valeurs">
+        <ul class="wrap values__in">
+          <li><span aria-hidden="true">🤝</span>Respect</li>
+          <li><span aria-hidden="true">👂</span>Écoute</li>
+          <li><span aria-hidden="true">🛡️</span>Prévention</li>
+          <li><span aria-hidden="true">🌱</span>Solidarité</li>
+        </ul>
+      </section>
+
+      <!-- ===== MISSION ===== -->
+      <section class="sec" id="mission">
+        <div class="wrap">
+          <h2 class="reveal">Notre mission</h2>
+          <p class="intro reveal">NOVA VITA, c’est l’idée d’un nouveau départ : informer, prévenir et mobiliser pour bâtir une société plus sûre. Nous faisons de la sensibilisation et de l’orientation ; nous ne fournissons <strong>aucun service psychologique, médical ou juridique</strong>.</p>
+          <div class="grid grid--4">
+            <article class="card reveal">
+              <span class="ico" aria-hidden="true">💡</span>
+              <h3>Sensibiliser</h3>
+              <p>Informer le public et déconstruire les idées reçues.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ico" aria-hidden="true">🌿</span>
+              <h3>Prévenir</h3>
+              <p>Encourager les comportements respectueux et prévenir les situations de violence.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ico" aria-hidden="true">🧭</span>
+              <h3>Accompagner</h3>
+              <p>Orienter vers des ressources et des services compétents.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ico" aria-hidden="true">✊</span>
+              <h3>Mobiliser</h3>
+              <p>Encourager l’engagement collectif pour une société plus sûre.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== COMPRENDRE ===== -->
+      <section class="sec sec--mauve" id="comprendre">
+        <div class="wrap">
+          <h2 class="reveal">Comprendre les différentes formes de violence</h2>
+          <p class="intro reveal">Reconnaître la violence est un premier pas. Elle ne se limite pas aux coups.</p>
+          <div class="grid grid--3">
+            <article class="card reveal">
+              <h3>Violences physiques</h3>
+              <p>Tout acte portant atteinte au corps : coups, bousculades, séquestration.</p>
+              <p class="ex">Exemple : frapper ou pousser quelqu’un lors d’une dispute.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Violences psychologiques et verbales</h3>
+              <p>Insultes, humiliations, menaces, contrôle ou isolement qui détruisent la confiance en soi.</p>
+              <p class="ex">Exemple : dénigrer sans cesse une personne devant les autres.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Harcèlement scolaire</h3>
+              <p>Moqueries, exclusion ou agressions répétées envers un élève par un ou plusieurs autres.</p>
+              <p class="ex">Exemple : se moquer chaque jour d’un camarade et l’exclure du groupe.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Cyberviolences</h3>
+              <p>Violences via les écrans : messages d’insultes, diffusion d’images, usurpation d’identité.</p>
+              <p class="ex">Exemple : partager une photo privée sans l’accord de la personne.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Violences sexuelles</h3>
+              <p>Tout acte sexuel ou comportement à caractère sexuel imposé sans consentement. Elles ne sont jamais la faute de la victime.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Violences et discriminations du quotidien</h3>
+              <p>Remarques, exclusions ou traitements inégaux fondés sur le genre, l’origine, le handicap, etc.</p>
+              <p class="ex">Exemple : écarter quelqu’un d’une activité à cause de son origine.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ODD ===== -->
+      <section class="sec" id="odd">
+        <div class="wrap">
+          <h2 class="reveal">Les ODD et NOVA VITA</h2>
+          <p class="intro reveal">Notre projet s’inspire des Objectifs de développement durable des Nations Unies. Il n’existe aucun partenariat officiel avec l’ONU.</p>
+          <div class="grid grid--2">
+            <article class="card odd reveal">
+              <!-- Badge officiel : assets/images/odd-16.png -->
+              <div class="badge">
+                <img src="assets/images/odd-16.png" alt="Logo officiel de l’ODD 16" onerror="this.remove()">
+                <b aria-hidden="true">16</b>
+              </div>
+              <div>
+                <h3>ODD 16 · Paix, justice et institutions efficaces</h3>
+                <p>Prévenir la violence, informer sur les droits et encourager le respect contribuent à des sociétés plus pacifiques et à l’accès de toutes et tous à la justice.</p>
+              </div>
+            </article>
+            <article class="card odd reveal">
+              <!-- Badge officiel : assets/images/odd-05.png -->
+              <div class="badge">
+                <img src="assets/images/odd-05.png" alt="Logo officiel de l’ODD 5" onerror="this.remove()">
+                <b aria-hidden="true">5</b>
+              </div>
+              <div>
+                <h3>ODD 5 · Égalité entre les sexes</h3>
+                <p>Lutter contre les stéréotypes et les violences fondées sur le genre est indispensable pour garantir l’égalité et la dignité de chacun.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ACTIONS ===== -->
+      <section class="sec sec--green" id="actions">
+        <div class="wrap">
+          <h2 class="reveal">Nos actions</h2>
+          <p class="intro reveal">Activités proposées et envisagées par NOVA VITA.</p>
+          <ul class="chips reveal">
+            <li>Campagnes de sensibilisation</li>
+            <li>Affiches et supports éducatifs</li>
+            <li>Ateliers de prévention</li>
+            <li>Publications informatives</li>
+            <li>Actions collectives pour promouvoir le respect</li>
+            <li>Défi des 7 jours du respect</li>
+          </ul>
+          <p class="reveal"><a href="#defi" class="btn btn--green">Relever le défi des 7 jours</a></p>
+          <!-- GALERIE : illustrations dans assets/images (action-01.svg à action-03.svg). Remplacez-les par vos photos si vous le souhaitez. Pour en ajouter, copiez une <figure>. -->
+          <div class="gallery">
+            <figure class="reveal">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkF0ZWxpZXIgZGUgcHLDqXZlbnRpb24gZW50cmUgw6lsw6h2ZXMiPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRURGN0YxIi8+PHJlY3QgeT0iNDcwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjEzMCIgZmlsbD0iIzlGRDNCNCIgb3BhY2l0eT0iLjUiLz48cmVjdCB4PSIxNzAiIHk9IjMwIiB3aWR0aD0iNDYwIiBoZWlnaHQ9IjIzMCIgcng9IjE0IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiMxMTExMTEiIHN0cm9rZS13aWR0aD0iOCIvPgo8cmVjdCB4PSIyMTAiIHk9IjY1IiB3aWR0aD0iMTkwIiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iIzExMTExMSIvPgo8cmVjdCB4PSIyMTAiIHk9IjEwMCIgd2lkdGg9IjI2MCIgaGVpZ2h0PSIxMCIgcng9IjUiIGZpbGw9IiMxMTExMTEiIG9wYWNpdHk9Ii4yNSIvPgo8cmVjdCB4PSIyMTAiIHk9IjEyNSIgd2lkdGg9IjIyMCIgaGVpZ2h0PSIxMCIgcng9IjUiIGZpbGw9IiMxMTExMTEiIG9wYWNpdHk9Ii4yNSIvPgo8cmVjdCB4PSIyMTAiIHk9IjE1MCIgd2lkdGg9IjI0MCIgaGVpZ2h0PSIxMCIgcng9IjUiIGZpbGw9IiMxMTExMTEiIG9wYWNpdHk9Ii4yNSIvPgo8Y2lyY2xlIGN4PSI1MzUiIGN5PSIxOTAiIHI9IjUwIiBmaWxsPSIjMUU3QjRGIi8+PHBhdGggZD0iTTUxMiAxOTAgbDE3IDE5IGwzMyAtMzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yNjAgMjYwIEwyNDAgMzMwIE01NDAgMjYwIEw1NjAgMzMwIiBzdHJva2U9IiMxMTExMTEiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMTEwIiBjeT0iMzc5IiByPSIyOSIgZmlsbD0iIzExMTExMSIvPjxyZWN0IHg9IjYxIiB5PSI0MTMiIHdpZHRoPSI5OSIgaGVpZ2h0PSIyOTAiIHJ4PSI0OSIgZmlsbD0iIzExMTExMSIvPjxjaXJjbGUgY3g9IjI3MCIgY3k9IjM0MyIgcj0iMzMiIGZpbGw9IiMxRTdCNEYiLz48cmVjdCB4PSIyMTQiIHk9IjM4MSIgd2lkdGg9IjExMiIgaGVpZ2h0PSIzMzAiIHJ4PSI1NiIgZmlsbD0iIzFFN0I0RiIvPjxjaXJjbGUgY3g9IjQzMCIgY3k9IjM3MCIgcj0iMzAiIGZpbGw9IiM5RkQzQjQiLz48cmVjdCB4PSIzNzkiIHk9IjQwNSIgd2lkdGg9IjEwMiIgaGVpZ2h0PSIzMDAiIHJ4PSI1MSIgZmlsbD0iIzlGRDNCNCIvPjxjaXJjbGUgY3g9IjU5MCIgY3k9IjMzNCIgcj0iMzQiIGZpbGw9IiMxMTExMTEiLz48cmVjdCB4PSI1MzIiIHk9IjM3MyIgd2lkdGg9IjExNiIgaGVpZ2h0PSIzNDAiIHJ4PSI1OCIgZmlsbD0iIzExMTExMSIvPjxjaXJjbGUgY3g9IjcyMCIgY3k9IjM4OCIgcj0iMjgiIGZpbGw9IiMxRTdCNEYiLz48cmVjdCB4PSI2NzIiIHk9IjQyMSIgd2lkdGg9Ijk1IiBoZWlnaHQ9IjI4MCIgcng9IjQ4IiBmaWxsPSIjMUU3QjRGIi8+PC9zdmc+" alt="Atelier de prévention entre élèves" onerror="this.remove()">
+              <figcaption>Atelier de prévention</figcaption>
+            </figure>
+            <figure class="reveal">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkFmZmljaGVzIGRlIHNlbnNpYmlsaXNhdGlvbiBleHBvc8OpZXMiPjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjRjNGM0YzIi8+PHJlY3QgeT0iNTIwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjMTExMTExIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzAgOTApIHJvdGF0ZSgtNCkiPjxyZWN0IHg9IjYiIHk9IjgiIHdpZHRoPSIyMDAiIGhlaWdodD0iMzMwIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMzMCIgZmlsbD0iIzExMTExMSIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjQiLz4KPGNpcmNsZSBjeD0iMTAwLjAiIGN5PSIxMTIuMiIgcj0iNDAuMCIgZmlsbD0iIzFFN0I0RiIvPjxwYXRoIGQ9Ik04Mi4wIDExMi4yIGwxMi4wIDE0LjAwMDAwMDAwMDAwMDAwMiBsMjYuMCAtMzAuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjguMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjx0ZXh0IHg9IjEwMC4wIiB5PSIyMzcuNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMzAuMCIgZmlsbD0iI0ZGRkZGRiIgbGV0dGVyLXNwYWNpbmc9IjIiPlJFU1BFQ1Q8L3RleHQ+CjxyZWN0IHg9IjQwLjAiIHk9IjI2NC4wIiB3aWR0aD0iMTIwLjAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9Ii41Ii8+PHJlY3QgeD0iNjAuMCIgeT0iMjkwLjQiIHdpZHRoPSI4MC4wIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjRkZGRkZGIiBvcGFjaXR5PSIuMzUiLz4KPHJlY3QgeD0iNzAuMCIgeT0iLTE0IiB3aWR0aD0iNjAiIGhlaWdodD0iMjYiIGZpbGw9IiM5RkQzQjQiIG9wYWNpdHk9Ii44NSIgdHJhbnNmb3JtPSJyb3RhdGUoLTQgMTAwLjAgMCkiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAwIDcwKSByb3RhdGUoMikiPjxyZWN0IHg9IjYiIHk9IjgiIHdpZHRoPSIyMTAiIGhlaWdodD0iMzUwIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz48cmVjdCB3aWR0aD0iMjEwIiBoZWlnaHQ9IjM1MCIgZmlsbD0iIzFFN0I0RiIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjQiLz4KPGNpcmNsZSBjeD0iMTA1LjAiIGN5PSIxMTkuMDAwMDAwMDAwMDAwMDEiIHI9IjQyLjAiIGZpbGw9IiMxMTExMTEiLz48cGF0aCBkPSJNODYuMSAxMTkuMDAwMDAwMDAwMDAwMDEgbDEyLjYgMTQuNzAwMDAwMDAwMDAwMDAxIGwyNy4zIC0zMS41IiBmaWxsPSJub25lIiBzdHJva2U9IiMxRTdCNEYiIHN0cm9rZS13aWR0aD0iOC40IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHRleHQgeD0iMTA1LjAiIHk9IjI1Mi4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIzMS41IiBmaWxsPSIjRkZGRkZGIiBsZXR0ZXItc3BhY2luZz0iMiI+w4lDT1VURTwvdGV4dD4KPHJlY3QgeD0iNDIuMCIgeT0iMjgwLjAiIHdpZHRoPSIxMjYuMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iLjUiLz48cmVjdCB4PSI2My4wIiB5PSIzMDguMCIgd2lkdGg9Ijg0LjAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiNGRkZGRkYiIG9wYWNpdHk9Ii4zNSIvPgo8cmVjdCB4PSI3NS4wIiB5PSItMTQiIHdpZHRoPSI2MCIgaGVpZ2h0PSIyNiIgZmlsbD0iIzlGRDNCNCIgb3BhY2l0eT0iLjg1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNCAxMDUuMCAwKSIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NDAgMTAwKSByb3RhdGUoNSkiPjxyZWN0IHg9IjYiIHk9IjgiIHdpZHRoPSIyMDAiIGhlaWdodD0iMzMwIiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMzMCIgZmlsbD0iI0ZGRkZGRiIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjQiLz4KPGNpcmNsZSBjeD0iMTAwLjAiIGN5PSIxMTIuMiIgcj0iNDAuMCIgZmlsbD0iIzFFN0I0RiIvPjxwYXRoIGQ9Ik04Mi4wIDExMi4yIGwxMi4wIDE0LjAwMDAwMDAwMDAwMDAwMiBsMjYuMCAtMzAuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjguMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjx0ZXh0IHg9IjEwMC4wIiB5PSIyMzcuNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMzAuMCIgZmlsbD0iIzExMTExMSIgbGV0dGVyLXNwYWNpbmc9IjIiPkVOU0VNQkxFPC90ZXh0Pgo8cmVjdCB4PSI0MC4wIiB5PSIyNjQuMCIgd2lkdGg9IjEyMC4wIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjMTExMTExIiBvcGFjaXR5PSIuNSIvPjxyZWN0IHg9IjYwLjAiIHk9IjI5MC40IiB3aWR0aD0iODAuMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzExMTExMSIgb3BhY2l0eT0iLjM1Ii8+CjxyZWN0IHg9IjcwLjAiIHk9Ii0xNCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjI2IiBmaWxsPSIjOUZEM0I0IiBvcGFjaXR5PSIuODUiIHRyYW5zZm9ybT0icm90YXRlKC00IDEwMC4wIDApIi8+PC9nPjxwYXRoIGQ9Ik02MCA1NjAgSDc0MCIgc3Ryb2tlPSIjMUU3QjRGIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWRhc2hhcnJheT0iMiAxOCIvPjwvc3ZnPg==" alt="Affiches de sensibilisation exposées" onerror="this.remove()">
+              <figcaption>Affiches de sensibilisation</figcaption>
+            </figure>
+            <figure class="reveal">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkFjdGlvbiBjb2xsZWN0aXZlIHBvdXIgbGUgcmVzcGVjdCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJzayIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI0VERjdGMSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzlGRDNCNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNzaykiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIzMDAiIHI9IjEyMCIgZmlsbD0iI0ZGRkZGRiIgb3BhY2l0eT0iLjciLz4KPHBhdGggZD0iTTAgNDcwIFEyMDAgMzgwIDQwMCA0NTAgVDgwMCA0MzAgVjYwMCBIMFoiIGZpbGw9IiMxRTdCNEYiIG9wYWNpdHk9Ii4zNSIvPjxwYXRoIGQ9Ik0wIDUyMCBRMjUwIDQ1MCA1MDAgNTA1IFQ4MDAgNDkwIFY2MDAgSDBaIiBmaWxsPSIjMTExMTExIi8+PGNpcmNsZSBjeD0iNjAiIGN5PSIyNzUiIHI9IjMwIiBmaWxsPSIjMTExMTExIi8+PHJlY3QgeD0iOSIgeT0iMzEwIiB3aWR0aD0iMTAyIiBoZWlnaHQ9IjMwMCIgcng9IjUxIiBmaWxsPSIjMTExMTExIi8+PGNpcmNsZSBjeD0iMTczIiBjeT0iMjM5IiByPSIzNCIgZmlsbD0iIzFFN0I0RiIvPjxyZWN0IHg9IjExNSIgeT0iMjc4IiB3aWR0aD0iMTE2IiBoZWlnaHQ9IjM0MCIgcng9IjU4IiBmaWxsPSIjMUU3QjRGIi8+PGNpcmNsZSBjeD0iMjg2IiBjeT0iMjkzIiByPSIyOCIgZmlsbD0iIzZGQjU4QSIvPjxyZWN0IHg9IjIzOCIgeT0iMzI2IiB3aWR0aD0iOTUiIGhlaWdodD0iMjgwIiByeD0iNDgiIGZpbGw9IiM5RkQzQjQiLz48Y2lyY2xlIGN4PSIzOTkiIGN5PSIyMjEiIHI9IjM2IiBmaWxsPSIjMTExMTExIi8+PHJlY3QgeD0iMzM4IiB5PSIyNjIiIHdpZHRoPSIxMjIiIGhlaWdodD0iMzYwIiByeD0iNjEiIGZpbGw9IiMxMTExMTEiLz48Y2lyY2xlIGN4PSI1MTIiIGN5PSIyNzUiIHI9IjMwIiBmaWxsPSIjMUU3QjRGIi8+PHJlY3QgeD0iNDYxIiB5PSIzMTAiIHdpZHRoPSIxMDIiIGhlaWdodD0iMzAwIiByeD0iNTEiIGZpbGw9IiMxRTdCNEYiLz48Y2lyY2xlIGN4PSI2MjUiIGN5PSIyNDgiIHI9IjMzIiBmaWxsPSIjNkZCNThBIi8+PHJlY3QgeD0iNTY5IiB5PSIyODYiIHdpZHRoPSIxMTIiIGhlaWdodD0iMzMwIiByeD0iNTYiIGZpbGw9IiM5RkQzQjQiLz48Y2lyY2xlIGN4PSI3MzgiIGN5PSIyODQiIHI9IjI5IiBmaWxsPSIjMTExMTExIi8+PHJlY3QgeD0iNjg5IiB5PSIzMTgiIHdpZHRoPSI5OSIgaGVpZ2h0PSIyOTAiIHJ4PSI0OSIgZmlsbD0iIzExMTExMSIvPjxsaW5lIHgxPSI3OCIgeTE9IjM0MyIgeDI9IjE1MiIgeTI9IjMxNSIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjE4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9IjEiLz48bGluZSB4MT0iMTk0IiB5MT0iMzE1IiB4Mj0iMjY5IiB5Mj0iMzU2IiBzdHJva2U9IiMxRTdCNEYiIHN0cm9rZS13aWR0aD0iMjAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMSIvPjxsaW5lIHgxPSIzMDMiIHkxPSIzNTYiIHgyPSIzNzciIHkyPSIzMDEiIHN0cm9rZT0iIzlGRDNCNCIgc3Ryb2tlLXdpZHRoPSIxNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIxIi8+PGxpbmUgeDE9IjQyMSIgeTE9IjMwMSIgeDI9IjQ5NCIgeTI9IjM0MyIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9IjEiLz48bGluZSB4MT0iNTMwIiB5MT0iMzQzIiB4Mj0iNjA1IiB5Mj0iMzIyIiBzdHJva2U9IiMxRTdCNEYiIHN0cm9rZS13aWR0aD0iMTgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMSIvPjxsaW5lIHgxPSI2NDUiIHkxPSIzMjIiIHgyPSI3MjAiIHkyPSIzNTAiIHN0cm9rZT0iIzlGRDNCNCIgc3Ryb2tlLXdpZHRoPSIyMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIxIi8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzk5IDE4NSkiPjxwYXRoIGQ9Ik0wIDAgVi0xNDAiIHN0cm9rZT0iIzExMTExMSIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMCAtMTQwIEg3OCBMNjIgLTExNiBMNzggLTkyIEgwWiIgZmlsbD0iIzFFN0I0RiIvPjwvZz48L3N2Zz4=" alt="Action collective pour le respect" onerror="this.remove()">
+              <figcaption>Action collective</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== QUIZ ===== -->
+      <section class="sec" id="quiz">
+        <div class="wrap wrap--narrow">
+          <h2 class="reveal">Le saviez-vous ?</h2>
+          <p class="intro">Un court quiz pour apprendre. Il ne permet en aucun cas d’évaluer une situation personnelle.</p>
+          <div class="quiz card" id="quiz-box" aria-live="polite"><noscript>Le quiz nécessite JavaScript.</noscript></div>
+        </div>
+      </section>
+
+      <!-- ===== AIDE ===== -->
+      <section class="sec sec--mauve" id="aide">
+        <div class="wrap wrap--narrow">
+          <h2>Besoin d’aide ?</h2>
+          <p class="intro">Vous n’avez pas à tout raconter pour demander de l’aide. Parler à une personne de confiance (ami, proche, enseignant, infirmier scolaire) est un bon début. En cas de danger immédiat, contactez les secours.</p>
+          <!-- À COMPLÉTER avec des ressources VÉRIFIÉES pour votre pays -->
+          <ul class="help">
+            <li><b>Numéro d’urgence</b> : <span class="todo">[À compléter : numéro officiel local]</span></li>
+            <li><b>Organisation d’écoute</b> : <span class="todo">[À compléter : nom + numéro vérifiés]</span></li>
+            <li><b>Lien utile</b> : <span class="todo">[À compléter : site officiel]</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== RESSOURCES ===== -->
+      <section class="sec" id="ressources">
+        <div class="wrap">
+          <h2 class="reveal">Nos ressources</h2>
+          <p class="intro reveal">Les documents ci-dessous seront ajoutés prochainement.</p>
+          <div class="grid grid--4">
+            <article class="card reveal">
+              <h3>Guides de prévention</h3>
+              <p class="soon">Bientôt disponible</p>
+            </article>
+            <article class="card reveal">
+              <h3>Reconnaître les signes de violence</h3>
+              <p class="soon">Bientôt disponible</p>
+            </article>
+            <article class="card reveal">
+              <h3>Ressources pour les témoins</h3>
+              <p class="soon">Bientôt disponible</p>
+            </article>
+            <article class="card reveal">
+              <h3>Droits et dispositifs d’aide</h3>
+              <p class="soon">Bientôt disponible</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section class="sec sec--green" id="contact">
+        <div class="wrap wrap--narrow">
+          <h2>Contact</h2>
+          <p class="note">Ce formulaire prépare un e-mail adressé à vitanova.asso@gmail.com : votre application de messagerie s’ouvre et vous envoyez le message vous-même. N’y écrivez pas d’informations urgentes ou sensibles.</p>
+          <form id="form" class="card" novalidate>
+            <label for="nom">Nom (facultatif)</label>
+            <input id="nom" name="nom" autocomplete="name">
+            <label for="email">Adresse e-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" aria-describedby="e-email" required>
+            <p class="err" id="e-email" role="alert"></p>
+            <label for="sujet">Sujet</label>
+            <input id="sujet" name="sujet" aria-describedby="e-sujet" required>
+            <p class="err" id="e-sujet" role="alert"></p>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" aria-describedby="e-message" required></textarea>
+            <p class="err" id="e-message" role="alert"></p>
+            <label class="check"><input type="checkbox" id="consent" aria-describedby="e-consent"> J’accepte que mes données soient utilisées pour répondre à ma demande.</label>
+            <p class="err" id="e-consent" role="alert"></p>
+            <button class="btn btn--mauve" type="submit">Envoyer</button>
+            <p id="form-ok" class="ok" role="status"></p>
+          </form>
+          <!-- Le formulaire ouvre l’application de messagerie (mailto). Pour un envoi automatique : ajoutez action="https://VOTRE-SERVICE" method="post" (Formspree, Getform…) et retirez e.preventDefault() dans script.js -->
+          <p class="note">E-mail : <a href="mailto:vitanova.asso@gmail.com">vitanova.asso@gmail.com</a> · Réseaux : <span class="todo">[liens à ajouter]</span></p>
+        </div>
+      </section>
+    
+</div>
+<div class="view" id="view-defi" data-view="defi">
+
+      <section class="page-hero">
+        <div class="wrap">
+          <a class="back" href="#actions">← Retour à l’accueil</a>
+          <h1>Le défi des 7 jours du <em>respect</em></h1>
+          <p class="lead">La violence recule quand de petits gestes deviennent des habitudes. Relevez un défi par jour pendant une semaine, seul(e), en classe ou entre amis.</p>
+        </div>
+      </section>
+      <div class="progress" aria-label="Progression">
+        <div class="wrap progress__in">
+          <div class="progress__bar" role="progressbar" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="bar"><i></i></div>
+          <span class="progress__txt" id="count">0 / 7 jours</span>
+        </div>
+      </div>
+      <section class="sec">
+        <div class="wrap wrap--narrow">
+          <p class="intro">Cochez chaque défi une fois relevé. Votre progression reste enregistrée sur cet appareil uniquement ; rien n’est envoyé.</p>
+          <ol class="days" id="days"></ol>
+          <div class="finish" id="finish" role="status">
+            <h2>Défi relevé. Bravo !</h2>
+            <p>Sept jours, sept gestes. Le respect est contagieux : invitez un(e) ami(e) à relever le défi à son tour.</p>
+            <button class="btn btn--green" type="button" id="share">Partager le défi</button>
+            <p id="share-msg" style="margin-top:14px"></p>
+          </div>
+          <button class="reset" type="button" id="reset">Recommencer le défi</button>
+        </div>
+      </section>
+      <section class="sec sec--green">
+        <div class="wrap wrap--narrow">
+          <h2>Et si ça ne va pas ?</h2>
+          <p class="intro">Ce défi est un outil de sensibilisation. Si vous êtes témoin ou victime de violence, parlez-en à une personne de confiance ou à un service compétent. En cas de danger immédiat, contactez les secours.</p>
+          <a class="btn btn--green" href="#aide">Voir les ressources d’aide</a>
+        </div>
+      </section>
+    
+</div>
+<div class="view" id="view-evenements" data-view="evenements">
+
+      <section class="page-hero">
+        <div class="wrap">
+          <a class="back" href="#accueil">← Retour à l’accueil</a>
+          <h1>Événements et <em>dates repères</em></h1>
+          <p class="lead">Les journées de mobilisation autour desquelles NOVA VITA propose des actions de sensibilisation.</p>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="wrap wrap--narrow">
+          <h2 class="reveal">Dates repères</h2>
+          <p class="intro reveal">Journées internationales liées à la lutte contre les violences, autour desquelles nous pouvons organiser des campagnes.</p>
+          <ol class="events">
+            <li class="event reveal">
+              <div class="event__date">1er jeudi de novembre</div>
+              <div>
+                <h3>Journée internationale contre la violence et le harcèlement à l’école</h3>
+                <p>Une journée de l’UNESCO qui inclut le cyberharcèlement.</p>
+                <p class="ex">Idée d’action : exposition d’affiches et débat en classe.</p>
+              </div>
+            </li>
+            <li class="event reveal">
+              <div class="event__date">20 novembre</div>
+              <div>
+                <h3>Journée mondiale de l’enfance</h3>
+                <p>Dédiée aux droits et au bien-être des enfants.</p>
+                <p class="ex">Idée d’action : atelier sur le droit de chacun à être protégé.</p>
+              </div>
+            </li>
+            <li class="event reveal">
+              <div class="event__date">25 novembre</div>
+              <div>
+                <h3>Journée internationale pour l’élimination de la violence à l’égard des femmes</h3>
+                <p>Lance les 16 jours d’activisme contre les violences de genre.</p>
+                <p class="ex">Idée d’action : campagne d’affiches et publication informative.</p>
+              </div>
+            </li>
+            <li class="event reveal">
+              <div class="event__date">10 décembre</div>
+              <div>
+                <h3>Journée des droits de l’homme</h3>
+                <p>Clôture des 16 jours d’activisme.</p>
+                <p class="ex">Idée d’action : action collective autour du respect et de l’égalité.</p>
+              </div>
+            </li>
+            <li class="event reveal">
+              <div class="event__date">8 mars</div>
+              <div>
+                <h3>Journée internationale des droits des femmes</h3>
+                <p>Met en avant l’égalité entre les sexes (ODD 5).</p>
+                <p class="ex">Idée d’action : atelier contre les stéréotypes.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="sec sec--mauve">
+        <div class="wrap">
+          <h2 class="reveal">Nos événements</h2>
+          <p class="intro reveal">Les rendez-vous organisés par NOVA VITA. Complétez les dates et les lieux dès qu’ils sont confirmés.</p>
+          <div class="grid grid--3">
+            <article class="card reveal">
+              <span class="tag">Atelier</span>
+              <h3>Atelier de prévention</h3>
+              <p><span class="todo">[date]</span> · <span class="todo">[lieu]</span></p>
+              <p class="soon">À venir</p>
+            </article>
+            <article class="card reveal">
+              <span class="tag">Campagne</span>
+              <h3>Campagne d’affiches</h3>
+              <p><span class="todo">[date]</span> · <span class="todo">[lieu]</span></p>
+              <p class="soon">À venir</p>
+            </article>
+            <article class="card reveal">
+              <span class="tag">Défi</span>
+              <h3>Défi des 7 jours du respect</h3>
+              <p>Disponible en ligne, à tout moment.</p>
+              <p><a href="#defi">Relever le défi</a></p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="sec sec--green">
+        <div class="wrap wrap--narrow cta-band">
+          <h2>Proposer un événement</h2>
+          <p class="intro">Une idée d’atelier, d’affiche ou d’action collective ? Écrivez-nous.</p>
+          <p><a class="btn btn--green" href="#contact">Proposer une idée</a></p>
+        </div>
+      </section>
+    
+</div>
+<div class="view" id="view-apropos" data-view="apropos">
+
+      <section class="page-hero">
+        <div class="wrap">
+          <a class="back" href="#accueil">← Retour à l’accueil</a>
+          <h1>À propos de <em>NOVA VITA</em></h1>
+          <p class="lead">Un projet né d’une conviction : informer et mobiliser permet de faire reculer la violence.</p>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="wrap">
+          <h2 class="reveal">Pourquoi NOVA VITA ?</h2>
+          <p class="intro reveal">« Nova vita » signifie « vie nouvelle » en latin. Ce nom exprime l’idée d’un nouveau départ : celui d’une société où chacun peut vivre en sécurité, dans le respect et la dignité. Nous sommes un projet de sensibilisation à caractère pédagogique.</p>
+          <div class="grid grid--2">
+            <article class="card reveal">
+              <h3>Ce que nous faisons</h3>
+              <ul class="tick">
+                <li>Informer sur les différentes formes de violence</li>
+                <li>Prévenir par l’éducation et le dialogue</li>
+                <li>Orienter vers des ressources et des services compétents</li>
+                <li>Mobiliser par des campagnes, ateliers et défis collectifs</li>
+              </ul>
+            </article>
+            <article class="card card--dark reveal">
+              <h3>Ce que nous ne faisons pas</h3>
+              <ul class="cross">
+                <li>Aucun service psychologique</li>
+                <li>Aucun service médical</li>
+                <li>Aucun conseil juridique</li>
+                <li>Aucune évaluation de situations personnelles</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="sec sec--mauve">
+        <div class="wrap">
+          <h2 class="reveal">Nos valeurs</h2>
+          <div class="grid grid--4">
+            <article class="card reveal">
+              <span class="ico" aria-hidden="true">🤝</span>
+              <h3>Respect</h3>
+              <p>Chaque personne a droit à la dignité, quelles que soient ses différences.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ico" aria-hidden="true">👂</span>
+              <h3>Écoute</h3>
+              <p>Prendre le temps d’entendre, sans juger ni minimiser.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ico" aria-hidden="true">🛡️</span>
+              <h3>Prévention</h3>
+              <p>Agir tôt, avant que les situations ne s’aggravent.</p>
+            </article>
+            <article class="card reveal">
+              <span class="ico" aria-hidden="true">🌱</span>
+              <h3>Solidarité</h3>
+              <p>Ensemble, nous avons plus de force que chacun seul.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="wrap">
+          <h2 class="reveal">L’équipe</h2>
+          <p class="intro reveal">Les personnes qui font vivre NOVA VITA. Ajoutez ici vos photos et vos noms.</p>
+          <div class="grid grid--4">
+            <article class="card team reveal">
+              <div class="avatar" aria-hidden="true">?</div>
+              <h3><span class="todo">[Prénom Nom]</span></h3>
+              <p><span class="todo">[Rôle]</span></p>
+            </article>
+            <article class="card team reveal">
+              <div class="avatar" aria-hidden="true">?</div>
+              <h3><span class="todo">[Prénom Nom]</span></h3>
+              <p><span class="todo">[Rôle]</span></p>
+            </article>
+            <article class="card team reveal">
+              <div class="avatar" aria-hidden="true">?</div>
+              <h3><span class="todo">[Prénom Nom]</span></h3>
+              <p><span class="todo">[Rôle]</span></p>
+            </article>
+            <article class="card team reveal">
+              <div class="avatar" aria-hidden="true">?</div>
+              <h3><span class="todo">[Prénom Nom]</span></h3>
+              <p><span class="todo">[Rôle]</span></p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="sec sec--green">
+        <div class="wrap wrap--narrow cta-band">
+          <h2>Envie de participer ?</h2>
+          <p class="intro">Relayer nos messages, proposer une idée ou organiser une action près de chez vous : chaque geste compte.</p>
+          <p><a class="btn btn--green" href="#contact">Nous contacter</a> <a class="btn btn--ghost" href="#defi">Relever le défi</a></p>
+        </div>
+      </section>
+    
+</div>
+<div class="view" id="view-faq" data-view="faq">
+
+      <section class="page-hero">
+        <div class="wrap">
+          <a class="back" href="#accueil">← Retour à l’accueil</a>
+          <h1>Questions <em>fréquentes</em></h1>
+          <p class="lead">Les réponses aux questions que l’on nous pose le plus souvent.</p>
+        </div>
+      </section>
+      <section class="sec">
+        <div class="wrap wrap--narrow">
+          <div class="faq">
+            <details class="reveal">
+              <summary>Qu’est-ce que NOVA VITA ?</summary>
+              <p>Un projet de sensibilisation à caractère pédagogique. Nous informons, prévenons et mobilisons pour faire reculer la violence. Notre démarche s’inspire des Objectifs de développement durable 16 et 5 des Nations Unies, sans partenariat officiel avec l’ONU.</p>
+            </details>
+            <details class="reveal">
+              <summary>Proposez-vous une aide psychologique, médicale ou juridique ?</summary>
+              <p>Non. Nous faisons de la sensibilisation et de l’orientation. Si vous avez besoin d’aide, parlez à une personne de confiance ou à un service compétent. En cas de danger immédiat, contactez les secours.</p>
+            </details>
+            <details class="reveal">
+              <summary>Comment reconnaître une situation de violence ?</summary>
+              <p>La violence ne se limite pas aux coups : insultes, humiliations, menaces, isolement, harcèlement, cyberviolences ou actes imposés sans consentement en font partie. La page « Comprendre les violences » détaille chaque forme avec des exemples.</p>
+            </details>
+            <details class="reveal">
+              <summary>Je suis témoin d’une violence. Que puis-je faire ?</summary>
+              <p>Soutenez la personne, sans vous mettre en danger, et alertez un adulte ou un service compétent. Ne partagez jamais d’images de la situation en ligne.</p>
+            </details>
+            <details class="reveal">
+              <summary>Le quiz peut-il évaluer ma situation personnelle ?</summary>
+              <p>Non. Il est uniquement éducatif et ne remplace en aucun cas l’avis d’un professionnel.</p>
+            </details>
+            <details class="reveal">
+              <summary>Comment vous écrire ?</summary>
+              <p>Écrivez-nous à <a href="mailto:vitanova.asso@gmail.com">vitanova.asso@gmail.com</a>, ou utilisez le formulaire de contact : il ouvre votre application de messagerie avec un e-mail déjà rédigé. N’y écrivez pas d’informations urgentes ou sensibles.</p>
+            </details>
+            <details class="reveal">
+              <summary>Comment participer ou aider ?</summary>
+              <p>Relevez le défi des 7 jours, partagez nos messages, proposez une idée d’événement ou rejoignez l’équipe via la page contact.</p>
+            </details>
+          </div>
+          <aside class="card card--dark reveal" style="margin-top:36px">
+            <h3>Vous n’avez pas trouvé votre réponse ?</h3>
+            <p>Écrivez-nous, ou consultez la page d’aide.</p>
+            <p><a class="btn btn--green" href="#contact">Nous contacter</a> <a class="btn btn--ghost btn--light" href="#aide">Besoin d’aide ?</a></p>
+          </aside>
+        </div>
+      </section>
+    
+</div>
+</main>
+<footer class="foot">
+      <div class="wrap foot__in">
+        <div>
+          <p class="logo__txt">NOVA VITA</p>
+          <p>Sensibiliser, prévenir, mobiliser pour une société plus sûre. Projet de sensibilisation à caractère pédagogique.</p>
+        </div>
+        <nav aria-label="Liens rapides">
+          <a href="#mission">Notre mission</a>
+          <a href="#comprendre">Comprendre</a>
+          <a href="#actions">Actions</a>
+          <a href="#defi">Défi 7 jours</a>
+          <a href="#evenements">Événements</a>
+          <a href="#apropos">À propos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p><a href="mailto:vitanova.asso@gmail.com">vitanova.asso@gmail.com</a><span class="todo">[Réseaux sociaux]</span><br><span class="todo">[Politique de confidentialité]</span></p>
+      </div>
+      <p class="copy">© <span id="year">2026</span> NOVA VITA — Projet scolaire de sensibilisation.</p>
+    </footer>
+<script>
+/* NOVA VITA — version en ligne (une seule page, plusieurs vues). */
+const burger = document.querySelector('.burger');
+const menu = document.getElementById('menu');
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function closeMenu() {
+  menu.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.setAttribute('aria-label', 'Ouvrir le menu');
+}
+burger.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+});
+menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+// ===== Apparition au défilement =====
+const items = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  items.forEach((el) => io.observe(el));
+} else {
+  items.forEach((el) => el.classList.add('in'));
+}
+
+// ===== Navigation entre les vues =====
+const TITLES = {
+  home: 'NOVA VITA — Ensemble, faisons reculer la violence',
+  defi: 'Le défi des 7 jours du respect — NOVA VITA',
+  evenements: 'Événements — NOVA VITA',
+  apropos: 'À propos — NOVA VITA',
+  faq: 'FAQ — NOVA VITA',
+};
+const navLinks = [...menu.querySelectorAll('a:not(.btn)')];
+let current = null;
+
+function setActive(hash) {
+  navLinks.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === hash));
+}
+
+function route() {
+  const name = decodeURIComponent(location.hash.slice(1));
+  if (name === 'contenu') { document.getElementById('contenu').focus(); return; }
+  const view = TITLES[name] && name !== 'home' ? name : 'home';
+  const changed = view !== current;
+
+  if (changed) {
+    document.querySelectorAll('.view').forEach((v) => v.classList.toggle('on', v.dataset.view === view));
+    document.title = TITLES[view];
+    current = view;
+    setActive(view === 'home' ? null : '#' + view);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  if (view === 'home' && name) {
+    const el = document.getElementById(name);
+    if (el) requestAnimationFrame(() => el.scrollIntoView());
+  }
+}
+window.addEventListener('hashchange', route);
+
+// Lien actif pendant le défilement de l'accueil
+if ('IntersectionObserver' in window) {
+  const home = document.getElementById('view-home');
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) setActive('#' + e.target.id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  navLinks.forEach((l) => {
+    const el = document.getElementById(l.getAttribute('href').slice(1));
+    if (el && home.contains(el)) spy.observe(el);
+  });
+}
+
+// ===== QUIZ (modifiez les questions ici) =====
+// q = question, o = options, a = index de la bonne réponse, e = explication
+const Q = [
+  {
+    q: 'Le harcèlement scolaire se caractérise surtout par…',
+    o: [
+      'Une dispute isolée entre deux élèves',
+      'Des actes répétés visant une même personne',
+      'Une simple plaisanterie',
+    ],
+    a: 1,
+    e: 'Ce sont la répétition et le rapport de force qui définissent le harcèlement.',
+  },
+  {
+    q: 'Une violence peut-elle être uniquement verbale ou psychologique ?',
+    o: [
+      'Oui, insultes, humiliations et menaces sont des violences',
+      'Non, seuls les coups comptent',
+    ],
+    a: 0,
+    e: 'Les violences psychologiques et verbales ont de réelles conséquences, même sans contact physique.',
+  },
+  {
+    q: 'Vous êtes témoin d’une situation de violence. Que pouvez-vous faire ?',
+    o: [
+      'Ne rien faire, ce n’est pas mon problème',
+      'Soutenir la personne et alerter un adulte ou un service compétent',
+      'Filmer pour le partager en ligne',
+    ],
+    a: 1,
+    e: 'Soutenir la victime et alerter sans vous mettre en danger est utile ; diffuser des images aggrave la situation.',
+  },
+  {
+    q: 'Partager une photo privée d’une personne sans son accord est…',
+    o: ['Sans gravité', 'Une forme de cyberviolence'],
+    a: 1,
+    e: 'Cela peut être sanctionné par la loi et blesser profondément la personne.',
+  },
+  {
+    q: 'Quand une personne subit une violence, la responsabilité incombe…',
+    o: ['À la victime', 'À l’auteur des violences'],
+    a: 1,
+    e: 'La responsabilité est toujours celle de l’auteur, jamais de la victime.',
+  },
+];
+
+const box = document.getElementById('quiz-box');
+let i = 0;
+let score = 0;
+
+function show() {
+  const c = Q[i];
+  box.innerHTML = `
+    <p class="meta">Question ${i + 1} sur ${Q.length} · Score : ${score}</p>
+    <h3></h3>
+    <div class="opts"></div>
+    <p class="fb"></p>`;
+  box.querySelector('h3').textContent = c.q;
+
+  const wrap = box.querySelector('.opts');
+  c.o.forEach((text, k) => {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.type = 'button';
+    b.textContent = text;
+    b.onclick = () => answer(k);
+    wrap.appendChild(b);
+  });
+}
+
+function answer(k) {
+  const c = Q[i];
+  const btns = box.querySelectorAll('.opt');
+
+  btns.forEach((b, n) => {
+    b.disabled = true;
+    if (n === c.a) b.classList.add('good');
+    else if (n === k) b.classList.add('bad');
+  });
+
+  const ok = k === c.a;
+  if (ok) score++;
+
+  // symbole + texte : pas de couleur seule
+  box.querySelector('.fb').textContent = (ok ? '✔ Bonne réponse. ' : '✘ Pas tout à fait. ') + c.e;
+
+  const next = document.createElement('button');
+  next.className = 'btn btn--green';
+  next.type = 'button';
+  next.textContent = i < Q.length - 1 ? 'Question suivante' : 'Voir le résultat';
+  next.onclick = () => {
+    i++;
+    if (i < Q.length) show();
+    else end();
+  };
+  box.appendChild(next);
+  next.focus();
+}
+
+function end() {
+  box.innerHTML = `
+    <h3>Quiz terminé : ${score} / ${Q.length}</h3>
+    <p>Merci d’avoir pris ce temps pour vous informer. Ce quiz est éducatif : il ne permet pas d’évaluer une situation personnelle. Si vous ou un proche êtes concerné, parlez-en à une personne de confiance ou à un service compétent (voir « Besoin d’aide ? »).</p>`;
+
+  const r = document.createElement('button');
+  r.className = 'btn btn--mauve';
+  r.type = 'button';
+  r.textContent = 'Recommencer';
+  r.onclick = () => {
+    i = 0;
+    score = 0;
+    show();
+  };
+  box.appendChild(r);
+}
+
+show();
+
+// ===== FORMULAIRE (validation uniquement, aucun envoi) =====
+const form = document.getElementById('form');
+
+// [id du champ, fonction de test, message d'erreur]
+const rules = [
+  ['email', (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), 'Veuillez saisir une adresse e-mail valide.'],
+  ['sujet', (v) => v.trim().length >= 3, 'Veuillez indiquer un sujet (3 caractères minimum).'],
+  ['message', (v) => v.trim().length >= 10, 'Votre message doit contenir au moins 10 caractères.'],
+];
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // à retirer si vous branchez un vrai service (voir index.html)
+  let first = null;
+
+  rules.forEach(([id, test, msg]) => {
+    const field = document.getElementById(id);
+    const bad = !test(field.value);
+    document.getElementById('e-' + id).textContent = bad ? msg : '';
+    field.setAttribute('aria-invalid', bad);
+    if (bad && !first) first = field;
+  });
+
+  const cb = document.getElementById('consent');
+  document.getElementById('e-consent').textContent = cb.checked ? '' : 'Veuillez accepter pour continuer.';
+  if (!cb.checked && !first) first = cb;
+
+  const ok = document.getElementById('form-ok');
+  if (first) {
+    ok.textContent = '';
+    first.focus();
+    return;
+  }
+
+  // Ouvre l'application de messagerie avec le message prêt à envoyer
+  const to = 'vitanova.asso@gmail.com';
+  const nom = document.getElementById('nom').value.trim();
+  const body = (nom ? 'Nom : ' + nom + '\n' : '') + 'E-mail : ' + document.getElementById('email').value + '\n\n' + document.getElementById('message').value;
+  const subject = document.getElementById('sujet').value;
+  ok.textContent = 'Votre application de messagerie s’ouvre : envoyez le message pour terminer. Si rien ne s’ouvre, écrivez-nous à ' + to + '.';
+  window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  form.reset();
+});
+
+// ===== Les 7 défis =====
+const DAYS = [
+  ['Dire merci', 'Remerciez sincèrement une personne que l’on remercie rarement.'],
+  ['Écouter vraiment', 'Écoutez quelqu’un jusqu’au bout, sans l’interrompre ni juger.'],
+  ['Relire avant d’envoyer', 'Avant chaque message en ligne, demandez-vous : est-il respectueux ?'],
+  ['Inclure', 'Invitez une personne souvent mise à l’écart à rejoindre votre groupe.'],
+  ['Ne pas rire des moqueries', 'Face à une moquerie, ne riez pas et dites calmement que ce n’est pas drôle.'],
+  ['Prendre des nouvelles', 'Demandez à un proche comment il va, puis écoutez la réponse.'],
+  ['Passer le relais', 'Parlez du défi autour de vous et invitez quelqu’un à le relever.']
+];
+const KEY = 'novavita-defi';
+let done = [];
+try { done = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { done = []; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} };
+
+const list = document.getElementById('days');
+DAYS.forEach(([title, text], n) => {
+  const li = document.createElement('li');
+  li.className = 'day';
+  li.innerHTML = `<div class="day__n"><small>JOUR</small>${n + 1}</div><div><h3></h3><p></p></div><button type="button"></button>`;
+  li.querySelector('h3').textContent = title;
+  li.querySelector('p').textContent = text;
+  li.querySelector('button').onclick = () => {
+    done = done.includes(n) ? done.filter(d => d !== n) : [...done, n];
+    save(); render();
+  };
+  list.appendChild(li);
+});
+
+function render() {
+  [...list.children].forEach((li, n) => {
+    const on = done.includes(n), b = li.querySelector('button');
+    li.classList.toggle('done', on);
+    b.textContent = on ? '✔ Relevé' : 'Marquer relevé';
+    b.setAttribute('aria-pressed', on);
+  });
+  const c = done.length;
+  document.querySelector('#bar i').style.width = (c / 7 * 100) + '%';
+  document.getElementById('bar').setAttribute('aria-valuenow', c);
+  document.getElementById('count').textContent = c + ' / 7 jours';
+  document.getElementById('finish').classList.toggle('show', c === 7);
+}
+render();
+
+document.getElementById('reset').onclick = () => { done = []; save(); render(); };
+
+document.getElementById('share').onclick = async () => {
+  const msg = document.getElementById('share-msg');
+  const data = { title: 'NOVA VITA — Défi des 7 jours du respect', text: 'J’ai relevé le défi des 7 jours du respect. Et toi ?', url: location.href };
+  try {
+    if (navigator.share) { await navigator.share(data); return; }
+    await navigator.clipboard.writeText(data.text + ' ' + data.url);
+    msg.textContent = 'Lien copié. Collez-le dans un message.';
+  } catch (e) { msg.textContent = 'Copiez l’adresse de cette page pour inviter un(e) ami(e).'; }
+};
+
+route();
+
+</script>
+</body>
+</html>
